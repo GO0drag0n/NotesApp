@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Open+Sans:wght@400;600;500&family=Roboto&display=swap');
 
 body{
-    background-color: #f3f4f6;
+    background-color: #bae6fd;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,11 +9,14 @@ body{
 }
 
 .inputNewNoteBox{
+    padding-top: 5px;
     /* border: 1px solid black; */
 }
 
 .inputNoteName{
     border-radius: 5px;
+    width: 270px;
+    margin-left: 80px;
     border: 1px solid black;
     padding: 5px;
 }
@@ -22,18 +25,29 @@ body{
     height:100%
 }
 
+.notesPlate{
+    margin-top: 10px;
+    border: black 2px solid;
+    width: 100vw;
+    height: 100vw;
+    max-height: 930px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .noteBox{
     margin: 10px;
-    border:1px solid black;
+    border: none;
     width: 280px;
-    min-height: 200px;
+    height: fit-content;
+    min-height: 180px;
     flex-direction: column;
     display: flex;
     /* justify-content:center */
-    background: linear-gradient(0deg, rgba(255,255,255,0.991269750087535) 29%, rgba(229,237,46,1) 53%);
+    background: #fde047;
     border-radius: 10px;
-    font-size:x-large;
-    padding-bottom: -5px;
 
 }
 
@@ -42,11 +56,15 @@ h4{
     font-weight: 500 ;
     justify-self: flex-start;    
     margin: 5px;
+    padding-left: 2px;
 }
 
 .line{
 
-    background-color: black;
+    background-color:  #fde68a;
+    width:99.5%;
+    margin: 0;
+    border: none;
 }
 
 .inputNote{
@@ -55,6 +73,7 @@ h4{
     border-bottom-right-radius: 10px;
     outline: none;
     resize: none;
+    background-color: #fde68a ;
 }
 
 
