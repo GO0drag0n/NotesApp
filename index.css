@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Open+Sans:wght@400;600;500&family=Roboto&display=swap');
+
+body{
+    background-color: #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.inputNewNoteBox{
+    /* border: 1px solid black; */
+}
+
+.inputNoteName{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.addNoteBtn{
+    height:100%
+}
+
+.noteBox{
+    margin: 10px;
+    border:1px solid black;
+    width: 280px;
+    min-height: 200px;
+    flex-direction: column;
+    display: flex;
+    /* justify-content:center */
+    background: linear-gradient(0deg, rgba(255,255,255,0.991269750087535) 29%, rgba(229,237,46,1) 53%);
+    border-radius: 10px;
+    font-size:x-large;
+    padding-bottom: -5px;
+
+}
+
+
+h4{
+    font-weight: 500 ;
+    justify-self: flex-start;    
+    margin: 5px;
+}
+
+.line{
+
+    background-color: black;
+}
+
+.inputNote{
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    outline: none;
+    resize: none;
+}
+
+
