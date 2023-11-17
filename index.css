@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&family=Open+Sans:wght@400;600;500&family=Roboto&display=swap');
 
 body{
-    background-color: #bae6fd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0px;
+    width: 100%;
     font-family: 'Open Sans', sans-serif;
+    background-color: #bae6fd;
+
 }
 
 .logo{
@@ -13,14 +13,12 @@ body{
 }
 
 .inputNewNoteBox{
-    width: 100vw;
+    width: 100%;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-
-    /* border: 1px solid black; */
+    background-color: white;
 }
 
 .headingText{
@@ -32,14 +30,14 @@ body{
 .inputNewNote{
     display: flex;
     align-items: center;
-    width: 305px;
     height: 50px;
     margin: 0px;
     padding: 0px;
+    
 }
 
 .inputNoteName{
-    border-radius: 5px;
+    border-radius: 10px;
     width: 20px;
     border: 1px solid black;
     padding: 5px;
@@ -51,77 +49,28 @@ body{
 
 
 .addNoteBtn {
-  backface-visibility: hidden;
-  background: #fde047;
-  border: 0;
-  border-radius: .375rem;
-  box-sizing: border-box;
-  width: 50%;
-  height: 28px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Circular,Helvetica,sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: -.01em;
-  line-height: 1.3;
-  padding: 1rem 1.85rem;
-  display: flex;
-  align-items: center;
-  -webkit-text-fill-color: black;
-  text-decoration: none;
-  transform: translateZ(0) scale(1);
-  transition: transform .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    background-color: #fde047;
+    -webkit-text-fill-color: black;
+    border-radius: 10px;
+    height: 32px;
+    border: 1px solid black;
+    cursor: pointer;
 }
 
-.addNoteBtn:disabled {
-  color: #787878;
-  cursor: auto;
-}
-
-.addNoteBtn:not(:disabled):hover {
-  transform: scale(1.05);
-}
-
-.addNoteBtn:not(:disabled):hover:active {
-  transform: scale(1.05) translateY(.125rem);
-}
-
-.addNoteBtn:focus {
-  outline: 0 solid transparent;
-}
-
-.addNoteBtn:focus:before {
-  border-width: .125rem;
-  content: "";
-  left: calc(-1*.375rem);
-  pointer-events: none;
-  position: absolute;
-  top: calc(-1*.375rem);
-  transition: border-radius;
-  user-select: none;
-}
-
-.addNoteBtn:focus:not(:focus-visible) {
-  outline: 0 solid transparent;
-}
-
-.addNoteBtn:not(:disabled):active {
-  transform: translateY(.125rem);
+.addNoteBtn:hover{
+    transition: all 0.2s;
+    box-shadow: -2px 3px 10px 0 rgba(0, 0, 0, 0.7);
 }
 
 .notesPlate{
-    margin-top: 10px;
-    border: black 1px solid;
-    width: 100vw;
-    height: 100vw;
+    flex-wrap: wrap;
+    /* margin-top: 10px; */
+    border-top: black 1px solid;
+    width: 100%;
+    /* height: 100vw; */
     max-height: 930px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 
 }
@@ -140,12 +89,24 @@ body{
 
 }
 
+.topNote{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close{
+    height: 25px;
+}
 
 h4{
     font-weight: 500 ;
     justify-self: flex-start;    
     margin: 5px;
     padding-left: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .line{
