@@ -29,6 +29,7 @@ function createNewNote(){
 
     let textArea = document.createElement('textarea');
     textArea.classList.add('inputNote');
+    textArea.placeholder = '  \n Enter new note '
     textArea.cols = 30;
     textArea.rows = 10;
 

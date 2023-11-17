@@ -53,6 +53,7 @@ body{
     -webkit-text-fill-color: black;
     border-radius: 10px;
     height: 32px;
+    min-width: 32px;
     border: 1px solid black;
     cursor: pointer;
 }
@@ -126,4 +127,39 @@ h4{
     background-color: #fde68a ;
 }
 
+@media only screen and (max-width: 600px) {
+    .logo{
+        display:none;
+    }
 
+    h2{
+        margin-left: 0px;
+    }
+
+    .addNoteBtn {
+        margin-right: 10px;
+        border-radius: 20px;
+    }
+
+    .addNoteBtn span {
+        display: none;
+    }
+
+    .addNoteBtn::after {
+        content: "+" !important;
+        font-size: large;
+    }
+
+    .inputNewNote{
+        margin-left: -100px;
+        width: 300px;
+    }
+
+    .inputNoteName{
+        width: 70%;
+    }
+
+    .notesPlate{
+        justify-content: center;
+    }
+}
