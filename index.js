@@ -10,6 +10,8 @@ function createNewNote(){
 
     if (!inputValue) return;
 
+    
+
     let noteBox = document.createElement('div');
     noteBox.classList.add('noteBox');
 
@@ -20,9 +22,13 @@ function createNewNote(){
     headingNote.textContent = inputValue;
 
     let close = document.createElement('div');
-    close.style = "display: flex; align-items: center;";
+    close.style = "display: flex; align-items: center; cursor: pointer";
     close.innerHTML = closeBtnHtml;
     close.onclick = deleteNote;
+
+    close.onclick = function() {
+        deleteNote(noteBox);
+    };
 
     let line = document.createElement(`hr`);
     line.classList.add('line');
@@ -32,15 +38,17 @@ function createNewNote(){
     textArea.placeholder = '  \n Enter new note '
     textArea.cols = 30;
     textArea.rows = 10;
+    
 
     noteBox.appendChild(topNote);
     topNote.appendChild(headingNote);
     topNote.appendChild(close);
-    noteBox.appendChild(line);
     noteBox.appendChild(textArea);
+    
 
     let notesPlate = document.getElementsByClassName('notesPlate').item(0);
-    
+
+
     document.getElementById("inputNoteName").value = "";
     notesPlate.appendChild(noteBox);
 }
@@ -49,6 +57,19 @@ function pressEnter(e){
     if(e.key == 'Enter') createNewNote();
 }
 
-function deleteNote(e){
-    e.target.parentNode.parentNode.parentNode.parentNode.remove();
+function deleteNote(noteElement) {
+    // Remove the provided note element from its parent
+    noteElement.remove();
 }
+
+function deleteAllNotes(event){
+    var notesContainer = document.querySelector(".notesPlate");
+
+    if(notesContainer){
+        var confirmDelete = confirm("Are you sure you want to delete all notes?");
+        if (confirmDelete) {
+            notesContainer.innerHTML = "";
+        }
+    }
+}
+    

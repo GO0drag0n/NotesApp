@@ -24,10 +24,28 @@ body {
   background-color: white;
 }
 
+.headingAndTrash{
+  width: 170px;
+  height: 40px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .headingText {
   padding-left: 10px;
   margin: 0px;
   width: fit-content;
+}
+
+.deleteAllNotes{
+  width: 30px;
+  height: 30px;
+}
+
+.trashBtn{
+  max-width: 30px;
+  cursor: pointer;
 }
 
 .inputNewNote {
