@@ -58,6 +58,7 @@ body {
 }
 
 .inputNoteName {
+  max-zoom: 1;
   border-radius: 10px;
   width: 155px;
   border: 1px solid black;
