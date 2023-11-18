@@ -4,9 +4,28 @@ let closeBtnHtml = `
     </svg>
 `;
 
+window.onload = function() {
+    loadSavedNotes();   
+};
 
-function createNewNote(){
-    let inputValue = document.getElementById("inputNoteName").value;
+
+function loadSavedNotes() {
+    let savedNotes = localStorage.getItem("notes");
+
+
+    if (savedNotes) {
+        let notesArray = JSON.parse(savedNotes);
+
+        notesArray.forEach(note => {
+            createNewNote(note);
+        });
+    }
+}
+
+
+function createNewNote(note){
+    let inputValue = note ? note.heading : document.getElementById("inputNoteName").value;
+    let inputContent = note ? note.content : ''; 
 
     if (!inputValue) return;
 
@@ -38,6 +57,13 @@ function createNewNote(){
     textArea.placeholder = '  \n Enter new note '
     textArea.cols = 30;
     textArea.rows = 10;
+
+    textArea.value = inputContent;
+
+    textArea.addEventListener('keypress', function (e) {
+        saveNotes();  
+    });
+
     
 
     noteBox.appendChild(topNote);
@@ -51,6 +77,8 @@ function createNewNote(){
 
     document.getElementById("inputNoteName").value = "";
     notesPlate.appendChild(noteBox);
+
+    saveNotes();
 }
 
 function pressEnter(e){
@@ -58,8 +86,8 @@ function pressEnter(e){
 }
 
 function deleteNote(noteElement) {
-    // Remove the provided note element from its parent
     noteElement.remove();
+    saveNotes();
 }
 
 function deleteAllNotes(event){
@@ -71,5 +99,17 @@ function deleteAllNotes(event){
             notesContainer.innerHTML = "";
         }
     }
+}
+
+function saveNotes(){
+    let notes = Array.from(document.getElementById("notesPlate").children)
+    .map(noteBox => {
+        return {
+            heading: noteBox.querySelector('.topNote h4').textContent,
+            content: noteBox.querySelector('.inputNote').value
+        };
+    });
+
+    localStorage.setItem("notes", JSON.stringify(notes));
 }
     

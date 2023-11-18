@@ -156,6 +156,11 @@ h4 {
     display: none;
   }
 
+
+  .headingAndTrash{
+    width: 140px;
+  }
+
   h2 {
     margin-left: 0px;
   }
@@ -175,8 +180,7 @@ h4 {
   }
 
   .inputNewNote {
-    margin-left: -100px;
-    width: 300px;
+    width: 400px !important;
   }
 
   .inputNoteName {
